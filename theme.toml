@@ -1,0 +1,20 @@
+name = "bookstack"
+license = "MIT"
+licenselink = "https://github.com/xnzone/hugo-theme-bookstack/blob/main/LICENSE"
+description = "Card-based blog theme for Hugo"
+
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/xnzone/hugo-theme-bookstack"
+
+# If you have a running demo of the theme.
+demosite = "https://xnzone.github.io/hugo-theme-bookstack/"
+
+tags = ["blog"]
+features = ["awesome", "card"]
+
+min_version = "0.101.0"
+
+# If the theme has a single author
+[author]
+    name = "xnzone"
+    homepage = "https://xnzone.com/xnzone"

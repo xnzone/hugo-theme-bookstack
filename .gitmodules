@@ -1,0 +1,3 @@
+[submodule "themes/bookstack"]
+	path = themes/bookstack
+	url = https://github.com/xnzone/hugo-theme-bookstack.git

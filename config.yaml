@@ -1,0 +1,14 @@
+baseURL: "https://xnzone.github.io/hugo-theme-bookstack/"
+title: bookstack
+paginate: 9
+theme: bookstack
+
+menu:
+  main:
+    - identifier: search
+      name: Search
+      url: search/
+outputs:
+    home:
+        - HTML
+        - JSON

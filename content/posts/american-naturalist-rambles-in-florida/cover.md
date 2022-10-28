@@ -3,6 +3,8 @@ author: Hugo Authors
 title: "American Naturalist: Rambles in Florida"
 date: 1869-01-01
 image: "fabian-quintero-UWQP2mh5YJI-unsplash.jpeg"
+cover: true
+weight: 2
 ---
 
 Florida, the "Land of Flowers," the enchanted ground wherein it has been said Ponce de Leon sought for the "fountain of perpetual youth," is not far away; the fountain, quite likely, is as remote as ever, but the land which it was said to bless with its ever flowing and rejuvenating waters, can be reached after a journey of a few days from New York, by steamship if the traveler is not unpleasantly affected by a sea-voyage, or, if the apprehension of "rough weather off Hatteras" should make a different route preferable, then by rail to Charleston, thence by steamer over waters generally smooth to Fernandina, stopping on the way at Savannah just long enough to look about and obtain a general idea of the place.  

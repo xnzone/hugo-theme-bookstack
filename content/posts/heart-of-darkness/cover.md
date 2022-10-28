@@ -3,6 +3,7 @@ author: Hugo Authors
 title: Heart of Darkness
 date: 1902-01-01
 image: "katherine-mccormack-j1egA73qp7c-unsplash.jpeg"
+cover: true
 ---
 
 The Nellie, a cruising yawl, swung to her anchor without a flutter of the sails, and was at rest. The flood had made, the wind was nearly calm, and being bound down the river, the only thing for it was to come to and wait for the turn of the tide.  

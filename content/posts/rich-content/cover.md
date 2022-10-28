@@ -8,6 +8,7 @@ tags = [
     "privacy",
 ]
 image = "eric-muhr-5JdvIMwR6fs-unsplash.jpeg"
+cover = true
 +++
 
 Once on a dark winter’s day, when the yellow fog hung so thick and heavy in the streets of London that the lamps were lighted and the shop windows blazed with gas as they do at night, an odd- looking little girl sat in a cab with her father and was driven rather slowly through the big thoroughfares.  

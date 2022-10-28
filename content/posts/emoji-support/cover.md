@@ -7,6 +7,7 @@ tags = [
     "emoji",
 ]
 image = "luise-and-nic-0AWamFgR65o-unsplash.jpeg"
+cover = true
 +++
 
 Emoji can be enabled in a Hugo project in a number of ways. 

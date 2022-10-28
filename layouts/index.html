@@ -1,7 +1,8 @@
 {{ define "main" }}
   {{- partial "profile.html" }}
 
-  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- $pages := (where site.RegularPages "Params.cover" "eq" true) }}
+  {{ $pages = sort $pages "Params.weight" }}
   {{- $paginator := .Paginate $pages }}
 
   <section class="article-list">

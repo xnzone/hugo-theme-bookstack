@@ -1,5 +1,5 @@
 <div class="pagination">
-  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- $pages := (where site.RegularPages "Params.cover" "eq" true) }}
   {{- $paginator := .Paginate $pages }}
 
   {{ range $paginator.Pagers }}

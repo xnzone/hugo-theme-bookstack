@@ -1,0 +1,315 @@
+$menu-width: 16rem !default;
+$font-size-base: 16px !default;
+$font-size-14: 0.875rem !default;
+$padding-16: 1rem !default;
+$padding-8: 0.5rem !default;
+$container-max-width: 118rem !default;
+$body-min-width: 20rem !default;
+$padding-4: 0.25rem !default;
+
+
+$mobile-breakpoint: $menu-width + $body-min-width * 1.2 + 16rem;
+
+@mixin fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@mixin outline {
+  outline-style: auto;
+  outline-color: currentColor;
+  outline-color: -webkit-focus-ring-color;
+}
+
+input.toggle {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+aside .book-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    margin: 1em 0;
+    position: relative;
+  }
+
+  a {
+    display: block;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+
+  ul {
+    padding-inline-start: $padding-16;
+  }
+}
+
+
+.flex {
+  display: flex;
+}
+
+.book-container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.book-menu {
+    flex: 0 0 $menu-width;
+    font-size: $font-size-base;
+  
+    .book-menu-content {
+      width: $menu-width;
+      padding: $padding-16;
+      background: white;
+      margin-top: 100px;
+  
+      @include fixed;
+    }
+  
+    a,
+    label {
+      color: inherit;
+      cursor: pointer;
+      word-wrap: break-word;
+    }
+  
+    a.active {
+      color: var(--color-link);
+    }
+  
+    input.toggle + label + ul {
+      display: none;
+    }
+  
+    input.toggle:checked + label + ul {
+      display: block;
+    }
+  
+    input.toggle + label::after {
+      content: ">";
+    }
+  
+    input.toggle:checked + label::after {
+      content: "^";
+    }
+}
+
+  // for RTL support
+body[dir="rtl"] .book-menu {
+  input.toggle + label::after {
+    content: "<";
+  }
+
+  input.toggle:checked + label::after {
+    content: "^";
+  }
+}
+
+.book-section-flat {
+  margin: $padding-16 * 2 0;
+
+  > a,
+  > span,
+  > label {
+    font-weight: bolder;
+  }
+
+  > ul {
+    padding-inline-start: 0;
+  }
+}
+
+// Responsive styles
+.book-menu-content,
+.book-page,
+.book-menu-header aside {
+  transition: 0.2s ease-in-out;
+  transition-property: transform, margin, opacity, visibility;
+  will-change: transform, margin, opacity;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  #menu-control,
+  #toc-control {
+    display: inline;
+  }
+
+  .book-menu {
+    visibility: hidden;
+    margin-inline-start: -$menu-width;
+    font-size: $font-size-base;
+    z-index: 1;
+  }
+
+  .book-toc {
+    display: none;
+  }
+
+  .book-menu-header {
+    display: block!important;
+    margin-top: -105px;
+  }
+
+  #menu-control:focus ~ main label[for="menu-control"] {
+    @include outline;
+  }
+
+  #menu-control:checked ~ main {
+    .book-menu {
+      visibility: initial;
+    }
+
+    .book-menu .book-menu-content {
+      transform: translateX($menu-width);
+      box-shadow: 0 0 $padding-8 rgba(0, 0, 0, 0.1);
+    }
+
+    .book-page {
+      opacity: 0.25;
+    }
+
+    .book-menu-overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  #toc-control:focus ~ main label[for="toc-control"] {
+    @include outline;
+  }
+
+  #toc-control:checked ~ main {
+    .book-menu-header aside {
+      display: block;
+    }
+  }
+
+  // for RTL support
+  body[dir="rtl"] #menu-control:checked ~ main {
+    .book-menu .book-menu-content {
+      transform: translateX(-$menu-width);
+    }
+  }
+}
+
+// Extra space for big screens
+@media screen and (min-width: 80rem) {
+  .book-page,
+  .book-menu .book-menu-content,
+  .book-toc .book-toc-content {
+    padding: $padding-16 * 2 $padding-16;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.book-icon {
+  filter: var(--icon-filter);
+}
+
+.book-page {
+  min-width: $body-min-width;
+  flex-grow: 1;
+  padding: $padding-16;
+}
+
+.book-menu-header {
+  display: none;
+  margin-bottom: $padding-16;
+
+  label {
+    line-height: 0;
+  }
+
+  img.book-icon {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+
+
+$startLevel: 1;
+$endLevel: 6;
+
+.book-page {
+  @for $currentLevel from $startLevel through $endLevel {
+    > h#{$currentLevel} {
+      counter-increment: h#{$currentLevel};
+      counter-reset: h#{$currentLevel + 1};
+
+      $content: "";
+      @for $n from $startLevel through $currentLevel {
+        $content: $content + 'counter(h#{$n})"."';
+      }
+
+      &::before {
+        content: unquote($content) " ";
+      }
+    }
+  }
+}
+
+@media print {
+  .book-menu,
+  .book-footer,
+  .book-toc {
+    display: none;
+  }
+
+  .book-menu-header,
+  .book-menu-header aside {
+    display: block;
+  }
+
+  main {
+    // Fix for https://bugzilla.mozilla.org/show_bug.cgi?id=939897
+    display: block !important;
+  }
+}
+
+// Future
+.book-menu .book-nav {
+  scrollbar-color: transparent var(--gray-500);
+}
+
+.book-toc .book-nav ul {
+  li {
+    counter-increment: item;
+
+    &:first-child {
+      counter-reset: item;
+    }
+
+    &:before {
+      content: counters(item, ".") ". ";
+      float: left;
+      margin-inline-end: $padding-4;
+    }
+  }
+}

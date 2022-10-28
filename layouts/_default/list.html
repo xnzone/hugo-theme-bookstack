@@ -1,4 +1,15 @@
-{{- define "main" }}
+{{ define "main" }}
+    <div class="container">
+      <main class="main">
+        {{ template "body" . }}
+          <!-- The part of the page that begins to differ between templates -->
+      </main>
+
+      {{- partialCached "footer.html" . }}
+    </div>
+{{ end }}
+
+{{- define "body" }}
 <section class="tags">
   <div class="tags__header">
     <h2 class="tags__title">{{ .Title }}</h2>

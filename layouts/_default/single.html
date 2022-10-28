@@ -1,10 +1,29 @@
 {{ define "main" }}
-<aside>
-  <div>
+<input type="checkbox" class="hidden toggle" id="menu-control" />
+    <main class="book-container flex">
+        {{ template "body" . }}
+          <!-- The part of the page that begins to differ between templates -->
+    </main>
+      {{- partialCached "footer.html" . }}
+{{ end }}
+
+{{ define "body" }}
+<aside class="book-menu">
+  <div class="book-menu-content">
     {{ template "book-menu" . }}
   </div>
 </aside>
+<div class="book-page">
+  <header class="book-menu-header">
+    {{ template "book-header" . }} <!-- Mobile layout header -->
+  </header>
+  {{ template "post" . }} <!-- Page Content -->
 
+  <label for="menu-control" class="hidden book-menu-overlay"></label>
+</div>
+{{ end }}
+
+{{ define "post" }}
 <div class="post">
   {{ with .Params.tags }}
   <div class="post__tags">
@@ -25,6 +44,12 @@
 </div>
 {{ end }}
 
+
 {{ define "book-menu" }}
   {{ partial "partials/book-menu" . }}
+{{ end }}
+
+
+{{ define "book-header" }}
+  {{ partial "partials/book-header" . }}
 {{ end }}

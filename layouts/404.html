@@ -1,4 +1,15 @@
 {{ define "main" }}
+    <div class="container">
+      <main class="main">
+        {{ template "body" . }}
+          <!-- The part of the page that begins to differ between templates -->
+      </main>
+
+      {{- partialCached "footer.html" . }}
+    </div>
+{{ end }}
+
+{{ define "body" }}
 <section class="not-found">
   <h3>404</h3>
   <span>page not found</span>

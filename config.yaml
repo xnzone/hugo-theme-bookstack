@@ -1,6 +1,6 @@
 baseURL: "https://xnzone.github.io/hugo-theme-bookstack/"
 title: bookstack
-paginate: 9 
+paginate: 6 
 theme: hugo-theme-bookstack
 
 menu:

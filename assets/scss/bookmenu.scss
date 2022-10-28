@@ -159,7 +159,17 @@ body[dir="rtl"] .book-menu {
 
   .book-menu-header {
     display: block!important;
-    margin-top: -105px;
+    margin-top: -110px;
+  }
+
+  .post__tags {
+    margin-top: 35px;
+    margin-bottom: -20px;
+  }
+
+  .header__title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   #menu-control:focus ~ main label[for="menu-control"] {

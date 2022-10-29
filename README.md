@@ -18,6 +18,11 @@ Then, add the theme to your site config:
 echo theme = \"bookstack\" >> config.toml
 ```
 
+## Configuration
+- favicon: file in static/favicon.png
+- list avatar: images file in assets/ and doc must have config `image`
+- example at `gh-pages` branch
+
 ## Features
 
 * **Search** supported by [Fuse.js](https://github.com/krisk/Fuse)

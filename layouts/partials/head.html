@@ -5,6 +5,10 @@
 
 <title>{{ if not .IsHome }}{{ if .Title }}{{ .Title }} - {{ end }}{{ end }}{{ .Site.Title }}</title>
 
+{{- $manifest := resources.Get "json/manifest.json" | resources.ExecuteAsTemplate "manifest.json" . }}
+<link rel="manifest" href="{{ $manifest.RelPermalink }}">
+<link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
+
 {{ $sass := resources.Get "scss/style.scss" }}
 {{ $style := $sass | resources.ToCSS | minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">

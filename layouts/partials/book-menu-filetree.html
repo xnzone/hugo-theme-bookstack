@@ -10,6 +10,10 @@
 {{ else if and (gt (len $dirs) 3) (eq (index $dirs 1) "posts" ) }}
   {{ $dir = (index $dirs 2) }}
 {{ end }}
+{{ with .Site.GetPage $bookSection $dir }}
+  {{ template "book-section-children" (dict "Section" . "CurrentPage" $) }}
+{{ end }}
+
 {{ define "book-section-children" }}{{/* (dict "Section" .Section "CurrentPage" .CurrentPage) */}}
   <ul>
     {{ range (where .Section.Pages "Params.bookhidden" "ne" true) }}

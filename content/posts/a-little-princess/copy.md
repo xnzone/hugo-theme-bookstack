@@ -1,9 +1,10 @@
 ---
 author: Hugo Authors
-title: copy 
+title:  Princess Copy 
 date: 1906-01-01
 weight: 2
 tags: ["princess"]
+image: "church-of-the-king-JdntgyV5w0Q-unsplash.jpeg"
 ---
 
 Once on a dark winter’s day, when the yellow fog hung so thick and heavy in the streets of London that the lamps were lighted and the shop windows blazed with gas as they do at night, an odd- looking little girl sat in a cab with her father and was driven rather slowly through the big thoroughfares.  

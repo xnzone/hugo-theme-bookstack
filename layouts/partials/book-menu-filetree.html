@@ -3,17 +3,13 @@
   {{ $bookSection = "/" }}{{/* Backward compatibility */}}
 {{ end }}
 
-{{ $dirs := (split .CurrentSection.File.Dir "/") }}
+{{ $dirs := (split .CurrentSection.RelPermalink "/") }}
 {{ $dir := "" }}
-{{ if and (gt (len $dirs) 1) (ne (index $dirs 0) "posts") }}
-  {{ $dir = (index $dirs 0) }}
-{{ else if and (gt (len $dirs) 2) (eq (index $dirs 0) "posts" ) }}
+{{ if and (gt (len $dirs) 2) (ne (index $dirs 1) "posts") }}
   {{ $dir = (index $dirs 1) }}
+{{ else if and (gt (len $dirs) 3) (eq (index $dirs 1) "posts" ) }}
+  {{ $dir = (index $dirs 2) }}
 {{ end }}
-{{ with .Site.GetPage $bookSection $dir }}
-  {{ template "book-section-children" (dict "Section" . "CurrentPage" $) }}
-{{ end }}
-
 {{ define "book-section-children" }}{{/* (dict "Section" .Section "CurrentPage" .CurrentPage) */}}
   <ul>
     {{ range (where .Section.Pages "Params.bookhidden" "ne" true) }}

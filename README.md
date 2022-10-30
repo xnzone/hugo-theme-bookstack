@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Example Site](https://books.xnzone.eu.org/hugo-theme-bookstack/)
+[Example Site](https://xnzone.github.io/hugo-theme-bookstack/)
 
 ## Install
 

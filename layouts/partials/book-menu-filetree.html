@@ -3,13 +3,7 @@
   {{ $bookSection = "/" }}{{/* Backward compatibility */}}
 {{ end }}
 
-{{ $dirs := (split .CurrentSection.RelPermalink "/") }}
-{{ $dir := "" }}
-{{ if and (gt (len $dirs) 2) (ne (index $dirs 1) "posts") }}
-  {{ $dir = (index $dirs 1) }}
-{{ else if and (gt (len $dirs) 3) (eq (index $dirs 1) "posts" ) }}
-  {{ $dir = (index $dirs 2) }}
-{{ end }}
+{{ $dir := .Section }}
 {{ with .Site.GetPage $bookSection $dir }}
   {{ template "book-section-children" (dict "Section" . "CurrentPage" $) }}
 {{ end }}

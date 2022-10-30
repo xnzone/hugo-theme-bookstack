@@ -91,6 +91,29 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 ```
 
+```c++
+int add(int a, int b) {
+  return a + b;
+}
+```
+
+```golang
+func add(a, b int) {
+  return a + b
+}
+```
+
+```python
+def add(a, b):
+    return a + b
+```
+
+```cpp
+int add(int a, int b) {
+  return a + b;
+}
+```
+
 #### Code block indented with four spaces
 
     <!doctype html>

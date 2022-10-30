@@ -27,3 +27,9 @@ Principally, she was thinking of what a queer thing it was that at one time one 
 “Yes, little Sara, it is. We have reached it at last.” And though she was only seven years old, she knew that he felt sad when he said it.  
 
 It seemed to her many years since he had begun to prepare her mind for “the place,” as she always called it. Her mother had died when she was born, so she had never known or missed her. Her young, handsome, rich, petting father seemed to be the only relation she had in the world. They had always played together and been fond of each other. She only knew he was rich because she had heard people say so when they thought she was not listening, and she had also heard them say that when she grew up she would be rich, too. She did not know all that being rich meant. She had always lived in a beautiful bungalow, and had been used to seeing many servants who made salaams to her and called her “Missee Sahib,” and gave her her own way in everything. She had had toys and pets and an ayah who worshipped her, and she had gradually learned that people who were rich had these things. That, however, was all she knew about it.
+
+```c
+int add(int a, int b) {
+    return a + b;
+}
+```

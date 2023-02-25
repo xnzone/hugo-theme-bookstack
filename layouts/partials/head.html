@@ -19,3 +19,5 @@
   {{ $js := slice $fusejs $search | resources.Concat "js/bundle.js" | resources.Fingerprint "sha512" }}
   <script defer type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{- end }}
+
+{{ partial "mathjax.html" . }}

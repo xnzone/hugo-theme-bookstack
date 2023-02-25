@@ -49,3 +49,5 @@ Block math:
 $$
  \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
 $$
+
+$frac{1}{n+1}C_{2n}^{n}$

@@ -13,7 +13,7 @@
   {{- partial "profile.html" }}
 
   {{- $pages := (where site.RegularPages "Params.cover" "eq" true) }}
-  {{ $pages = sort $pages "Params.weight" }}
+  {{ $pages = sort $pages "Params.sort" }}
   {{- $paginator := .Paginate $pages }}
 
   <section class="article-list">

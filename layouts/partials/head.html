@@ -9,6 +9,10 @@
 <link rel="manifest" href="{{ $manifest.RelPermalink }}">
 <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 {{ $sass := resources.Get "scss/style.scss" }}
 {{ $style := $sass | resources.ToCSS | minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">

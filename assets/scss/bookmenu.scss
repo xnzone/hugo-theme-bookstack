@@ -73,7 +73,7 @@ aside .book-nav ul {
       width: $menu-width;
       padding: $padding-16;
       background: white;
-      margin-top: 100px;
+      // margin-top: 100px;
   
       @include fixed;
     }
@@ -258,8 +258,10 @@ body[dir="rtl"] .book-menu {
   }
 
   img.book-icon {
-    height: 1.5em;
-    width: 1.5em;
+    height: 3em;
+    width: 3em;
+    margin-left: 330px;
+    margin-top: 10px;
   }
 }
 
@@ -306,6 +308,7 @@ $endLevel: 6;
 // Future
 .book-menu .book-nav {
   scrollbar-color: transparent var(--gray-500);
+  margin-top: 50px;
 }
 
 .book-toc .book-nav ul {

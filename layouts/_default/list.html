@@ -23,8 +23,12 @@
   <div class="results">
     {{- $pages := union .RegularPages .Sections }}
     {{ range $pages }}
+    {{ $image := .Params.image }}
+    {{if hasPrefix $image "http" }}
+    {{ else }}
+    {{ $image = print .Site.BaseURL .Params.image }}
     <div class="resultItem">
-      <div class="resultItem__media" style="background-image: url({{ (print .Site.BaseURL .Params.image) | absURL }});"></div>
+      <div class="resultItem__media" style="background-image: url({{ (print $image ) | absURL }});"></div>
       <div class="resultItem__body">
         <h3 class="resultItem__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
         <div class="resultItem__footer">{{ .Date.Format "2006-01-02" }}</div>

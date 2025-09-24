@@ -2,9 +2,13 @@
 <article class="article">
   <a class="article__inner" href="{{ .Permalink }}">
     <div class="article__header">
+      {{ if hasPrefix .Params.image "http" }}
+      <img class="article__image" src="{{ .Params.image }}">
+      {{ else }}
       {{ $image := resources.Get .Params.image }}
       {{ if $image }}
       <img class="article__image" src="{{ $image.RelPermalink }}">
+      {{ end }}
       {{ end }}
     </div>
     <div class="article__text">
